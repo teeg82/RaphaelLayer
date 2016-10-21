@@ -26,7 +26,8 @@ if (typeof exports != 'undefined') {
 
 R.version = '0.1.3';
 
-R.Layer = L.Class.extend({
+// Compatible with leaflet 0.7 and 1.0
+R.Layer = (L.Layer ? L.Layer : L.Class).extend({
 	includes: L.Mixin.Events,
 	
 	initialize: function(options) {
